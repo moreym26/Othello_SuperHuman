@@ -9,6 +9,8 @@ import com.example.GameFramework.LocalGame;
 import com.example.GameFramework.gameConfiguration.GameConfig;
 import com.example.GameFramework.gameConfiguration.GamePlayerType;
 import com.example.GameFramework.infoMessage.GameState;
+import com.example.GameFramework.utilities.Logger;
+import com.example.GameFramework.utilities.Saving;
 import com.example.othello_superhuman.R;
 import com.example.othello_superhuman.players.OthelloHumanPlayer1;
 import com.example.othello_superhuman.players.OthelloComputerPlayer1;
@@ -20,6 +22,8 @@ import com.example.othello_superhuman.view.OthelloLocalGame;
 import java.util.ArrayList;
 
 public class MainActivity extends GameMainActivity {
+    private static final String TAG = "MainActivity";
+
     public static final int PORT_NUMBER = 5213;
 
     @Override
@@ -83,4 +87,30 @@ public class MainActivity extends GameMainActivity {
         return new OthelloLocalGame((OthelloState) gameState);
     }
 
+
+    /**
+     * saveGame, adds this games prepend to the filename
+     *
+     * @param gameName
+     * 				Desired save name
+     * @return String representation of the save
+     */
+    @Override
+    public GameState saveGame(String gameName) {
+        return super.saveGame(getGameString(gameName));
+    }
+
+    /**
+     * loadGame, adds this games prepend to the desire file to open and creates the game specific state
+     * @param gameName
+     * 				The file to open
+     * @return The loaded GameState
+     */
+    @Override
+    public GameState loadGame(String gameName){
+        String appName = getGameString(gameName);
+        super.loadGame(appName);
+        Logger.log(TAG, "Loading: " + gameName);
+        return (GameState) new OthelloState((OthelloState) Saving.readFromFile(appName, this.getApplicationContext()));
+    }
 }

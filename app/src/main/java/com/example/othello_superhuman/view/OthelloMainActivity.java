@@ -1,3 +1,4 @@
+/*
 package com.example.othello_superhuman.view;
 
 import com.example.GameFramework.GameMainActivity;
@@ -44,3 +45,4 @@ public class OthelloMainActivity extends GameMainActivity {
     //create local game
     //look at tictacto to
 }
+*/
