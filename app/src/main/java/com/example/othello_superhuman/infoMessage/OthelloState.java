@@ -438,7 +438,7 @@ public class OthelloState extends GameState implements Serializable{
      */
     public int[] dumbAIMove() {
         boolean haveMoved = false;
-        if (!isBlackTurn && isDumb) {//if its the computers turn
+        if (!isBlackTurn) {//if its the computers turn
             // Iterate through the board until you find an empty spot that is a valid move,
             // Then place piece
             for (int i = 0; i<8; i++) {
@@ -465,7 +465,7 @@ public class OthelloState extends GameState implements Serializable{
         boolean haveMoved = false;
         Random random = new Random(100);
 
-        if (!isBlackTurn && !isDumb) {//if its the computers turn
+        if (!isBlackTurn) {//if its the computers turn
             // Iterate through the board until you find an empty spot that is a valid move,
             // Then place piece
             if (50 > random.nextInt()) {//if the random number is less than 50, start searching from the top of the board
