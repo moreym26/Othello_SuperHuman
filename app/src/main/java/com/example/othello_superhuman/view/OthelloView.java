@@ -1,4 +1,4 @@
-package com.example.othello_godmaster.view;
+package com.example.othello_superhuman.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 
-import com.example.othello_godmaster.infoMessage.OthelloState;
+import com.example.othello_superhuman.infoMessage.OthelloState;
 
 public class OthelloView extends SurfaceView {
 

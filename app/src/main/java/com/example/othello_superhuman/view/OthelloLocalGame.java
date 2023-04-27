@@ -1,13 +1,13 @@
-package com.example.othello_godmaster.view;
+package com.example.othello_superhuman.view;
 
-import com.example.Game;
-import com.example.LocalGame;
-import com.example.actionMessage.GameAction;
-import com.example.othello_godmaster.actionMessage.OthelloMoveAction;
-import com.example.othello_godmaster.infoMessage.OthelloState;
-import com.example.players.GamePlayer;
-import com.example.utilities.GameTimer;
-import com.example.utilities.Tickable;
+import com.example.GameFramework.Game;
+import com.example.GameFramework.LocalGame;
+import com.example.GameFramework.actionMessage.GameAction;
+import com.example.othello_superhuman.actionMessage.OthelloMoveAction;
+import com.example.othello_superhuman.infoMessage.OthelloState;
+import com.example.GameFramework.players.GamePlayer;
+import com.example.GameFramework.utilities.GameTimer;
+import com.example.GameFramework.utilities.Tickable;
 
 import android.os.Handler;
 import android.os.Looper;

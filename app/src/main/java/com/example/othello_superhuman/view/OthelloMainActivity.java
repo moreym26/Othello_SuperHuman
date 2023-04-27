@@ -1,11 +1,11 @@
-package com.example.othello_godmaster.view;
+package com.example.othello_superhuman.view;
 
-import com.example.GameMainActivity;
-import com.example.LocalGame;
-import com.example.gameConfiguration.GameConfig;
-import com.example.gameConfiguration.GamePlayerType;
-import com.example.infoMessage.GameState;
-import com.example.othello_godmaster.infoMessage.OthelloState;
+import com.example.GameFramework.GameMainActivity;
+import com.example.GameFramework.LocalGame;
+import com.example.GameFramework.gameConfiguration.GameConfig;
+import com.example.GameFramework.gameConfiguration.GamePlayerType;
+import com.example.GameFramework.infoMessage.GameState;
+import com.example.othello_superhuman.infoMessage.OthelloState;
 
 import java.util.ArrayList;
 

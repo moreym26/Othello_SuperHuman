@@ -1,15 +1,15 @@
-package com.example.othello_godmaster.players;
+package com.example.othello_superhuman.players;
 
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.GameMainActivity;
-import com.example.infoMessage.GameInfo;
-import com.example.othello_godmaster.R;
-import com.example.othello_godmaster.actionMessage.OthelloMoveAction;
-import com.example.othello_godmaster.view.OthelloView;
-import com.example.players.GameHumanPlayer;
-import com.example.utilities.Logger;
+import com.example.GameFramework.GameMainActivity;
+import com.example.GameFramework.infoMessage.GameInfo;
+import com.example.othello_superhuman.R;
+import com.example.othello_superhuman.actionMessage.OthelloMoveAction;
+import com.example.othello_superhuman.view.OthelloView;
+import com.example.GameFramework.players.GameHumanPlayer;
+import com.example.GameFramework.utilities.Logger;
 
 public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouchListener {
     //Tag for logging

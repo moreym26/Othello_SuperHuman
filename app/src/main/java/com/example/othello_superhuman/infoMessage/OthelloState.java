@@ -1,6 +1,6 @@
 package com.example.othello_superhuman.infoMessage;
 
-import edu.up.cs301.game.GameFramework.infoMessage.GameState;
+import com.example.GameFramework.infoMessage.GameState;
 
 import java.util.Random;
 import java.io.Serializable;

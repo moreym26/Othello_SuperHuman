@@ -7,11 +7,11 @@ import android.util.Log;
 import com.example.othello_superhuman.actionMessage.OthelloMoveAction;
 import com.example.othello_superhuman.infoMessage.OthelloState;
 
-import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
-import edu.up.cs301.game.GameFramework.infoMessage.IllegalMoveInfo;
-import edu.up.cs301.game.GameFramework.infoMessage.NotYourTurnInfo;
-import edu.up.cs301.game.GameFramework.players.GameComputerPlayer;
-import edu.up.cs301.game.GameFramework.utilities.GameTimer;
+import com.example.GameFramework.infoMessage.GameInfo;
+import com.example.GameFramework.infoMessage.IllegalMoveInfo;
+import com.example.GameFramework.infoMessage.NotYourTurnInfo;
+import com.example.GameFramework.players.GameComputerPlayer;
+import com.example.GameFramework.utilities.GameTimer;
 
 //EASY AI
 
@@ -39,10 +39,6 @@ public class OthelloComputerPlayer1 extends GameComputerPlayer {
             game.sendAction(new OthelloMoveAction(this, a[0], a[1]));
         }
 
-    @Override
-    public void tick(GameTimer timer) {
-
-    }
 }
 
 

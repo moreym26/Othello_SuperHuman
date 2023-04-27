@@ -4,12 +4,12 @@ package com.example.othello_superhuman.players;
 import android.os.Handler;
 import android.util.Log;
 
-import com.example.infoMessage.GameInfo;
-import com.example.infoMessage.IllegalMoveInfo;
-import com.example.infoMessage.NotYourTurnInfo;
-import com.example.othello_godmaster.actionMessage.OthelloMoveAction;
-import com.example.othello_godmaster.infoMessage.OthelloState;
-import com.example.players.GameComputerPlayer;
+import com.example.GameFramework.infoMessage.GameInfo;
+import com.example.GameFramework.infoMessage.IllegalMoveInfo;
+import com.example.GameFramework.infoMessage.NotYourTurnInfo;
+import com.example.othello_superhuman.actionMessage.OthelloMoveAction;
+import com.example.othello_superhuman.infoMessage.OthelloState;
+import com.example.GameFramework.players.GameComputerPlayer;
 
 //GOD-MODE AI
 

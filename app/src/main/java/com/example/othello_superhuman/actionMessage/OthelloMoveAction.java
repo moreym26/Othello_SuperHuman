@@ -1,8 +1,8 @@
 package com.example.othello_superhuman.actionMessage;
 
 
-import edu.up.cs301.game.GameFramework.actionMessage.GameAction;
-import edu.up.cs301.game.GameFramework.players.GamePlayer;
+import com.example.GameFramework.actionMessage.GameAction;
+import com.example.GameFramework.players.GamePlayer;
 
 public class OthelloMoveAction extends GameAction {
     //Tag for logging
