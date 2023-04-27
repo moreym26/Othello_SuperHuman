@@ -34,21 +34,21 @@ public class MainActivity extends GameMainActivity {
         // yellow-on-blue GUI
         playerTypes.add(new GamePlayerType("Local Human Player (blue-yellow)") {
             public GamePlayer createPlayer(String name) {
-                return new OthelloHumanPlayer1(name, R.layout.ttt_human_player1);
+                return new OthelloHumanPlayer1(name, R.layout.activity_main);
             }
         });
 
         // red-on-yellow GUI
         playerTypes.add(new GamePlayerType("Local Human Player (yellow-red)") {
             public GamePlayer createPlayer(String name) {
-                return new OthelloHumanPlayer1(name, R.layout.ttt_human_player1_flipped);
+                return new OthelloHumanPlayer1(name, R.layout.activity_main);
             }
         });
 
         // note that most games don't require a second human player class
         playerTypes.add(new GamePlayerType("Local Human Player (game of 33)") {
             public GamePlayer createPlayer(String name) {
-                return new OthelloHumanPlayer1(name, R.layout.ttt_human_player2);
+                return new OthelloHumanPlayer1(name, R.layout.activity_main);
             }
         });
 
@@ -74,7 +74,7 @@ public class MainActivity extends GameMainActivity {
         defaultConfig.addPlayer("Computer", 3); // dumb computer player
 
         // Set the initial information for the remote player
-        defaultConfig.setRemoteData("Remote Player", "", 1); // red-on-yellow GUI
+        // defaultConfig.setRemoteData("Remote Player", "", 1); // red-on-yellow GUI
 
         //done!
         return defaultConfig;
