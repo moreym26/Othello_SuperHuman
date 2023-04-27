@@ -5,11 +5,11 @@ import android.view.View;
 
 import com.example.GameFramework.GameMainActivity;
 import com.example.GameFramework.infoMessage.GameInfo;
+import com.example.GameFramework.players.GameHumanPlayer;
+import com.example.GameFramework.utilities.Logger;
 import com.example.othello_superhuman.R;
 import com.example.othello_superhuman.actionMessage.OthelloMoveAction;
 import com.example.othello_superhuman.view.OthelloView;
-import com.example.GameFramework.players.GameHumanPlayer;
-import com.example.GameFramework.utilities.Logger;
 
 public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouchListener {
     //Tag for logging
@@ -17,6 +17,7 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
 
     // the surface view
     private OthelloView surfaceView;
+
 
     private int layoutId;
 
