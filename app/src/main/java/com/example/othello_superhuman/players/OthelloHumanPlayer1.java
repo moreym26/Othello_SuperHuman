@@ -38,6 +38,7 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
             return;
         }
         else{
+            surfaceView.setGameState((OthelloState)info);
             surfaceView.invalidate();
         }
     }
@@ -93,7 +94,7 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
         }
         if (row != -1 && col != -1){
             if(gs.isValidMove(row, col)){
-                game.sendAction(new OthelloMoveAction(this, row, col));
+                this.game.sendAction(new OthelloMoveAction(this, row, col));
             }
         }
         return false;

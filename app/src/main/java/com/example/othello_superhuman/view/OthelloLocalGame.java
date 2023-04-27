@@ -14,6 +14,7 @@ import android.os.Looper;
 import android.os.Message;
 public class OthelloLocalGame extends LocalGame {
 
+
     public OthelloLocalGame(){
         super();
 
@@ -37,7 +38,7 @@ public class OthelloLocalGame extends LocalGame {
         if(((OthelloState)state).isBlackTurn && playerIdx == 0 && ((OthelloState)(state)).moveAvailable()){
             return true;
         }
-        if(!((OthelloState)state).isBlackTurn && playerIdx == 1 && ((OthelloState)(state)).moveAvailable()){
+        if(!(((OthelloState)state).isBlackTurn) && playerIdx == 1 && ((OthelloState)(state)).moveAvailable()){
             return true;
         }
         else
@@ -64,16 +65,17 @@ public class OthelloLocalGame extends LocalGame {
 
         if(state.isValidMove(row, col)){
             if(state.isBlackTurn) {
-                state.dumbMakeMove('b');
+                state.dumbMakeMove('b', row, col);
             }
             else {
-                state.dumbMakeMove('w');
+                state.dumbMakeMove('w', row, col);
             }
-            state.isBlackTurn = !state.isBlackTurn;
-            if(!state.moveAvailable()){
-                state.isBlackTurn = !state.isBlackTurn;
+            state.isBlackTurn = !(state.isBlackTurn);
+            if(!(state.moveAvailable())){
+                state.isBlackTurn = !(state.isBlackTurn);
             }
-            super.state = (state);
+            super.state = state;
+
             return true;
         }
         else

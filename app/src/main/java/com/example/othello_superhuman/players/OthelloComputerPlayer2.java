@@ -31,12 +31,12 @@ public class OthelloComputerPlayer2 extends GameComputerPlayer {
         }
 
         OthelloState othelloState = new OthelloState((OthelloState) info);
-
-        sleep(3);
-        int[] a = othelloState.godAIMove();
-        if (a[0] != -1 && a[1] == -1) {
-            ((OthelloState) (game.getGameState())).flip(a[0], a[1]);
-            game.sendAction(new OthelloMoveAction(this, a[0], a[1]));
+        if(!(((OthelloState)(game.getGameState())).isBlackTurn)) {
+            sleep(3);
+            int[] a = othelloState.godAIMove();
+            if (a[0] != -1 && a[1] == -1) {
+                game.sendAction(new OthelloMoveAction(this, a[0], a[1]));
+            }
         }
     }
 }

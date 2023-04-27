@@ -613,63 +613,17 @@ public class OthelloState extends GameState implements Serializable{
             else setIsBlackTurn(!isBlackTurn);
         }
     }
-    public boolean dumbMakeMove(char c){
+    public boolean dumbMakeMove(char c, int row, int col){
         if(c == 'b' && !isBlackTurn){
             return false;
         }
         if(c == 'w' && isBlackTurn){
             return false;
         }
-        int x =0;
-        int y =0;
-        //if its out of bounds return false
-        if (touchX < 400 || touchX > 1200 || touchY < 100 || touchY > 900) {
-            return false;
-        }
-        //x coordinates
-        if(touchX > 400 && touchX < 500){
-            x = 0;
-        } else if (touchX < 600) {
-            x = 1;
-        }else if (touchX < 700) {
-            x = 2;
-        }else if (touchX < 800) {
-            x = 3;
-        }else if (touchX < 900) {
-            x = 4;
-        }else if (touchX < 1000) {
-            x = 5;
-        }else if (touchX < 1100) {
-            x = 6;
-        } else if (touchX < 1200) {
-            x = 7;
-        }
-        else {
-            return false;
-        }
-        //Y coordinates
-        if(touchY > 100 && touchY < 200){
-            y = 0;
-        } else if (touchY < 300) {
-            y = 1;
-        }else if (touchY < 400) {
-            y = 2;
-        }else if (touchY < 500) {
-            y = 3;
-        }else if (touchY < 600) {
-            y = 4;
-        }else if (touchY < 700) {
-            y = 5;
-        }else if (touchY < 800) {
-            y = 6;
-        } else if (touchY < 900) {
-            y = 7;
-        }
-        else
-            return false;
-        if(isValidMove(y, x)){
-            flip(y, x);
-            board[y][x] = c;
+
+        if(isValidMove(row, col)){
+            flip(row, col);
+            board[row][col] = c;
             return true;
         }
         return false;

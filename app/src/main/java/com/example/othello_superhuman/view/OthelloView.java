@@ -43,6 +43,10 @@ public class OthelloView extends SurfaceView {
         setBackgroundColor(Color.WHITE);
 
     }
+    public void setGameState(OthelloState state){
+        this.gameState = state;
+    }
+
     public OthelloState getGameState(){ return gameState;}
 
     public void onDraw(Canvas c) {
