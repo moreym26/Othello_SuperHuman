@@ -457,7 +457,8 @@ public class OthelloState extends GameState implements Serializable{
         else {
             //if its not the computers turn, don't do anything
         }
-        return null;
+        int[] a = {-1, -1};
+        return a;
     }
 
     public int[] godAIMove() {

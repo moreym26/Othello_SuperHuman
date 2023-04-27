@@ -9,6 +9,7 @@ import com.example.GameFramework.players.GameHumanPlayer;
 import com.example.GameFramework.utilities.Logger;
 import com.example.othello_superhuman.R;
 import com.example.othello_superhuman.actionMessage.OthelloMoveAction;
+import com.example.othello_superhuman.infoMessage.OthelloState;
 import com.example.othello_superhuman.view.OthelloView;
 
 public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouchListener {
@@ -17,7 +18,6 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
 
     // the surface view
     private OthelloView surfaceView;
-
 
     private int layoutId;
 
@@ -33,17 +33,22 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
 
     @Override
     public void receiveInfo(GameInfo info) {
-
+        if(!(info instanceof OthelloState)){
+            this.flash(200, 10);
+            return;
+        }
+        else{
+            surfaceView.invalidate();
+        }
     }
+
     @Override
     public boolean onTouch(View view, MotionEvent event) {
         // ignore if not an "up" event
-        if (event.getAction() != MotionEvent.ACTION_UP) return true;
-        // get the x and y coordinates of the touch-location;
-        // convert them to square coordinates (where both
-        // values are in the range 0..2)
-        int x = (int) event.getX();
-        int y = (int) event.getY();
+
+        OthelloState gs = ((OthelloState)(game.getGameState()));
+        int x = (int)event.getX();
+        int y = (int)event.getY();
         int row = -1;
         int col = -1;
         //if its out of bounds return false
@@ -86,8 +91,10 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
         } else if (y < 900) {
             row = 7;
         }
-        if (row == -1 || col == -1){
-            game.sendAction(new OthelloMoveAction(this, row, col));
+        if (row != -1 && col != -1){
+            if(gs.isValidMove(row, col)){
+                game.sendAction(new OthelloMoveAction(this, row, col));
+            }
         }
         return false;
 
@@ -107,7 +114,7 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
         activity.setContentView(layoutId);
 
         // set the surfaceView instance variable
-        surfaceView = (OthelloView)myActivity.findViewById(R.id.View);
+        surfaceView = activity.findViewById(R.id.View);
         Logger.log("set listener","OnTouch");
         surfaceView.setOnTouchListener(this);
     }

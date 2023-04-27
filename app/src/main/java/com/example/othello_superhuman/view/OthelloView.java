@@ -52,36 +52,7 @@ public class OthelloView extends SurfaceView {
         endX = 1200;
         endY = 100;
 
-        if(gameState.homeScreen){
-            c.drawPaint(othello);
-            c.drawRect(400, 100, 1200, 900, sage);
-            black.setTextSize(150);
-            c.drawText("OTHELLO", 485, 250, black);
-            black.setTextSize(125);
-            c.drawText("START GAME", 415, 350, black);
-
-            //Boxes
-            c.drawRect(525, 600, 725, 675, brownBox);
-            c.drawRect(875, 600, 1075, 675, brownBox);
-
-            //Human or AI
-            black.setTextSize(50);
-            c.drawText("Human", 545, 655, black);
-            black.setTextSize(40);
-            c.drawText("Computer", 885, 655, black);
-            if(gameState.AIGame){
-                //Easy or GodMode
-                //Boxes
-                c.drawRect(525, 600, 725, 675, brownBox);
-                c.drawRect(875, 600, 1075, 675, brownBox);
-                black.setTextSize(50);
-                c.drawText("Easy", 565, 655, black);
-                black.setTextSize(40);
-                c.drawText("God-Mode", 885, 655, black);
-            }
-
-        }
-        else if (!gameState.gameOver){
+        if (!gameState.gameOver){
             c.drawRect(400, 100, 1200, 900, green);
             //vertical lines
             for (int i = 0; i < 9; i++) {

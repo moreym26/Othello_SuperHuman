@@ -21,6 +21,14 @@ import com.example.othello_superhuman.view.OthelloLocalGame;
 
 import java.util.ArrayList;
 
+
+
+
+
+
+
+
+
 public class MainActivity extends GameMainActivity {
     private static final String TAG = "MainActivity";
 
@@ -33,20 +41,6 @@ public class MainActivity extends GameMainActivity {
 
         // yellow-on-blue GUI
         playerTypes.add(new GamePlayerType("Local Human Player (blue-yellow)") {
-            public GamePlayer createPlayer(String name) {
-                return new OthelloHumanPlayer1(name, R.layout.activity_main);
-            }
-        });
-
-        // red-on-yellow GUI
-        playerTypes.add(new GamePlayerType("Local Human Player (yellow-red)") {
-            public GamePlayer createPlayer(String name) {
-                return new OthelloHumanPlayer1(name, R.layout.activity_main);
-            }
-        });
-
-        // note that most games don't require a second human player class
-        playerTypes.add(new GamePlayerType("Local Human Player (game of 33)") {
             public GamePlayer createPlayer(String name) {
                 return new OthelloHumanPlayer1(name, R.layout.activity_main);
             }
@@ -71,7 +65,7 @@ public class MainActivity extends GameMainActivity {
 
         // Add the default players
         defaultConfig.addPlayer("Human", 0); // yellow-on-blue GUI
-        defaultConfig.addPlayer("Computer", 3); // dumb computer player
+        defaultConfig.addPlayer("Computer", 1); // dumb computer player
 
         // Set the initial information for the remote player
         // defaultConfig.setRemoteData("Remote Player", "", 1); // red-on-yellow GUI
