@@ -14,21 +14,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp" >
+        android:layout_marginBottom="@dimen/table_row_vert_pad" >
 
         <Button
             android:id="@+id/saveConfigButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Make Configuration Default" />
+            android:layout_marginLeft="@dimen/config_horiz_margin"
+            android:text="@string/save_config_as_default" />
 
         <CheckBox
             android:id="@+id/onScreenLogging"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/debugLogging"
-            android:text="On-screen Logging" />
+            android:text="@string/on_screen_logging" />
 
         <CheckBox
             android:id="@+id/debugLogging"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/playGameButton"
             android:layout_marginRight="20dp"
-            android:text="Debug Logging"/>
+            android:text="@string/debug_logging"/>
 
         <Button
             android:id="@+id/playGameButton"
@@ -44,8 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:text="Start Game!" />
+            android:layout_marginRight="@dimen/config_horiz_margin"
+            android:text="@string/start_the_game" />
 
     </RelativeLayout>
 
