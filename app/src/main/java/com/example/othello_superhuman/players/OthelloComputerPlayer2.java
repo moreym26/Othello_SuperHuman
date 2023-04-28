@@ -34,75 +34,83 @@ public class OthelloComputerPlayer2 extends GameComputerPlayer {
 
         OthelloState othelloState = new OthelloState((OthelloState) info);
         if(!(((OthelloState)(game.getGameState())).isBlackTurn)) {
-            sleep(3);
+            sleep(1.5);
             int[] a = this.godAIMove(othelloState);
-            if (a[0] != -1 && a[1] != -1) {
+            if (a[0] != -1 && a[1] != -1 && a != null) {
                 game.sendAction(new OthelloMoveAction(this, a[0], a[1]));
             }
         }
     }
 
     public int[] godAIMove(OthelloState os) {
-        boolean haveMoved = false;
         Random random = new Random(100);
+        //Prioritize corner spots (guarantees a spot that won't be taken)
+        //Then edges (gets a spot that is less likely to get captured)
+        //If none of those options are available, find a spot in the board
+        //by search top to bottom or vice versa.
+        if (!os.isBlackTurn) {//if its the computers turn
+            //Check the corners
+            if(os.isValidMove(0,0)){
+                int[] a = {0,0};
+                return a;
+            }
+            if(os.isValidMove(0,7)){
+                int[] a = {0,7};
+                return a;
+            }
+            if(os.isValidMove(7,0)){
+                int[] a = {7,0};
+                return a;
+            }
+            if(os.isValidMove(7,7)){
+                int[] a = {7,7};
+                return a;
+            }
+            //Then check the edges
+            for(int i = 0; i < 8; i++){ //Left Side
+                if(os.isValidMove(i, 0)){
+                    int[] a = {i, 0};
+                    return a;
+                }
+            }
+            for(int i = 0; i < 8; i++){//Right Side
+                if(os.isValidMove(i, 7)){
+                    int[] a = {i, 7};
+                    return a;
+                }
+            }
+            for(int i = 0; i < 8; i++){//Top Side
+                if(os.isValidMove(0, i)){
+                    int[] a = {0, i};
+                    return a;
+                }
+            }
+            for(int i = 0; i < 8; i++){//Bottom Side
+                if(os.isValidMove(7, i)){
+                    int[] a = {7, i};
+                    return a;
+                }
+            }
 
-        if (!os.isBlackTurn && !os.isDumb) {//if its the computers turn
+            //Otherwise
             // Iterate through the board until you find an empty spot that is a valid move,
             // Then place piece
             if (50 > random.nextInt()) {//if the random number is less than 50, start searching from the top of the board
                 for (int i = 0; i < 8; i++) {
                     for (int j = 0; j < 8; j++) {
-                        //corners
-                        if (haveMoved == false && os.isValidMove(i, j) && ((i == 0 && j == 0) || (i == 0 && j == 8) || (i == 8 && j == 0) || (i == 8 && j == 8))) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
+                        if(os.isValidMove(i, j)){
                             int[] a = {i, j};
                             return a;
-                            //haveMoved = true;
-                            //break;
-                        } else if (haveMoved == false && os.isValidMove(i, j) && (i == 0 || j == 0)) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            //break;
-                        } else if (haveMoved == false && os.isValidMove(i, j)) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            //break;
                         }
                     }
                 }
             }
             else {//if the random number is greater than 50, start searching from the bottom of the board
-                for (int i = 8; i >0; i--) {
-                    for (int j = 8; j > 0; j--) {
-                        //corners
-                        if (haveMoved == false && os.isValidMove(i, j) && ((i == 0 && j == 0) || (i == 0 && j == 8) || (i == 8 && j == 0) || (i == 8 && j == 8))) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
+                for (int i = 7; i >-1; i--) {
+                    for (int j = 7; j > -1; j--) {
+                        if(os.isValidMove(i, j)){
                             int[] a = {i, j};
                             return a;
-                            //haveMoved = true;
-                            //break;
-                        } else if (haveMoved == false && os.isValidMove(i, j) && (i == 0 || j == 0)) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            ////break;
-                        } else if (haveMoved == false && os.isValidMove(i, j)) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            //break;
                         }
                     }
                 }
