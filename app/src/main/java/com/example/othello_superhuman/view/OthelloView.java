@@ -103,9 +103,9 @@ public class OthelloView extends SurfaceView {
                         c.drawCircle(450 + (100 * j), 150 + (100 * i), 49, green);
                     }
                     //Put piece counter
-                    black.setTextSize(75);
-                    c.drawText("Black Pieces:" + gameState.numBlackPieces , 400, 1000, black);
-                    c.drawText("White Pieces:" + gameState.numWhitePieces , 400, 1100, black);
+                    black.setTextSize(70);
+                    c.drawText("Black Pieces:" + gameState.numBlackPieces , 400, 990, black);
+                    c.drawText("White Pieces:" + gameState.numWhitePieces , 400, 1050, black);
                     //Draw grey circles for possible move
                     for (int l = 0; l < 8; l++) {
                         for (int m = 0; m < 8; m++) {
@@ -124,30 +124,30 @@ public class OthelloView extends SurfaceView {
         else{
 
             //Game End Screen
-            c.drawRect(400, 100, 1200, 900, sage);
-            black.setTextSize(125);
-            //GameOverMessage
-            c.drawText("Game Over!", 480, 240, black);
-            black.setTextSize(75);
-            if(gameState.isTie){
-                c.drawText("Tie. No Winner!", 595, 310, black);
-            }
-            else{
-                if(gameState.blackWinner) {
-                    c.drawText("Black Wins!", 595, 310, black);
-                }
-                else {
-                    c.drawText("White Wins!", 595, 310, black);
-                }
-            }
-            //Score
-            String blackS = ""+gameState.numBlackPieces;
-            String whiteS = ""+gameState.numWhitePieces;
-            c.drawCircle(625, 425 , 100, black);
-            black.setTextSize(40);
-            c.drawText(blackS, 613, 560, black);
-            c.drawCircle(975, 425 , 100, white);
-            c.drawText(whiteS, 963, 560, black);
+//            c.drawRect(400, 100, 1200, 900, sage);
+//            black.setTextSize(125);
+//            //GameOverMessage
+//            c.drawText("Game Over!", 480, 240, black);
+//            black.setTextSize(75);
+//            if(gameState.isTie){
+//                c.drawText("Tie. No Winner!", 595, 310, black);
+//            }
+//            else{
+//                if(gameState.blackWinner) {
+//                    c.drawText("Black Wins!", 595, 310, black);
+//                }
+//                else {
+//                    c.drawText("White Wins!", 595, 310, black);
+//                }
+//            }
+//            //Score
+//            String blackS = ""+gameState.numBlackPieces;
+//            String whiteS = ""+gameState.numWhitePieces;
+//            c.drawCircle(625, 425 , 100, black);
+//            black.setTextSize(40);
+//            c.drawText(blackS, 613, 560, black);
+//            c.drawCircle(975, 425 , 100, white);
+//            c.drawText(whiteS, 963, 560, black);
 
             /*//Buttons
             c.drawRect(525, 600, 725, 675, brownBox);

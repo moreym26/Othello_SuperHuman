@@ -41,8 +41,6 @@ public class OthelloMainActivity extends GameMainActivity {
 
 
 
-    //create default config
-    //create local game
-    //look at tictacto to
+
 }
 */
