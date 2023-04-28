@@ -54,7 +54,7 @@ public class OthelloLocalGame extends LocalGame {
                 return "White Wins!!\n" + "White pieces: " + state.numWhitePieces + "\n" + "Black pieces: " + state.numBlackPieces + "\n";
             }
             if(state.numWhitePieces < state.numBlackPieces) {
-                return "Black Wins!!\n " + "White pieces: " + state.numWhitePieces + "\n" + "Black pieces: " + state.numBlackPieces + "\n";
+                return "Black Wins!!\n" + "White pieces: " + state.numWhitePieces + "\n" + "Black pieces: " + state.numBlackPieces + "\n";
 
             }
             //GameOverMessage

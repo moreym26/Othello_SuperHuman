@@ -442,7 +442,7 @@ public class OthelloState extends GameState implements Serializable{
                 }
             }
         }
-        getNumPieces();
+       // getNumPieces();
         return false;
     }
 
