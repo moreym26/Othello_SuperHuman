@@ -74,5 +74,7 @@ public class OthelloComputerPlayer1 extends GameComputerPlayer {
         return a;
     }
 
+
+
 }
 

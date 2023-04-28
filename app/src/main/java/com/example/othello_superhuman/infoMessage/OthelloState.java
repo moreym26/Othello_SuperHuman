@@ -71,6 +71,21 @@ public class OthelloState extends GameState implements Serializable{
         return this.board;
     }
 
+    public void getNumPieces() {
+        numBlackPieces = 0;
+        numWhitePieces =0;
+        for (int l = 0; l<8; l++) {
+            for (int m = 0; m < 8; m++) {
+                if (board[l][m] == 'b') {
+                    numBlackPieces++;
+                }
+                else if (board[l][m] == 'w') {
+                    numWhitePieces++;
+                }
+            }
+        }
+    }
+
     public void setIsBlackTurn(boolean b){
         this.isBlackTurn = b;
     }
@@ -427,6 +442,7 @@ public class OthelloState extends GameState implements Serializable{
                 }
             }
         }
+        getNumPieces();
         return false;
     }
 
@@ -461,18 +477,7 @@ public class OthelloState extends GameState implements Serializable{
      shows the end game message and says who won with the amount of disks they had.
      */
     public void endGame() {
-        numBlackPieces = 0;
-        numWhitePieces = 0;
-        for(int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] == 'b') {
-                    numBlackPieces++;
-                }
-                if (board[i][j] == 'w'){
-                    numWhitePieces++;
-                }
-            }
-        }
+        getNumPieces();
         if(numBlackPieces == 0){
             gameOver = true;
             blackWinner = false;
@@ -964,6 +969,7 @@ public class OthelloState extends GameState implements Serializable{
                             else if(board[i][j] == 'e' || i ==0 || j==7){
                                 isEmpty = true;
                             }
+
                             i--;
                             j++;
                         }
@@ -971,19 +977,9 @@ public class OthelloState extends GameState implements Serializable{
                     }
                 }
             }
-            numBlackPieces = 0;
-            numWhitePieces =0;
-            for (int l = 0; l<8; l++) {
-                for (int m = 0; m < 8; m++) {
-                    if (board[l][m] == 'b') {
-                        numBlackPieces++;
-                    }
-                    else if (board[l][m] == 'w') {
-                        numWhitePieces++;
-                    }
-                }
-            }
+
         }
+        getNumPieces();
 
     }
 }

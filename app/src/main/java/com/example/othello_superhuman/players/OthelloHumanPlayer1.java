@@ -125,4 +125,6 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
     //holds the ui
 
 
+
+
 }

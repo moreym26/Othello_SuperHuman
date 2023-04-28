@@ -102,8 +102,9 @@ public class OthelloView extends SurfaceView {
                         c.drawCircle(450 + (100 * j), 150 + (100 * i), 49, green);
                     }
                     //Put piece counter
+                    black.setTextSize(75);
                     c.drawText("Black Pieces:" + gameState.numBlackPieces , 400, 1000, black);
-                    c.drawText("White Pieces:" + gameState.numWhitePieces , 400, 1050, black);
+                    c.drawText("White Pieces:" + gameState.numWhitePieces , 400, 1100, black);
                     //Draw grey circles for possible move
                     for (int l = 0; l < 8; l++) {
                         for (int m = 0; m < 8; m++) {
