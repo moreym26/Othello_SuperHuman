@@ -432,78 +432,7 @@ public class OthelloState extends GameState implements Serializable{
 
 
 
-    public int[] godAIMove() {
-        boolean haveMoved = false;
-        Random random = new Random(100);
 
-        if (!isBlackTurn && !isDumb) {//if its the computers turn
-            // Iterate through the board until you find an empty spot that is a valid move,
-            // Then place piece
-            if (50 > random.nextInt()) {//if the random number is less than 50, start searching from the top of the board
-                for (int i = 0; i < 8; i++) {
-                    for (int j = 0; j < 8; j++) {
-                        //corners
-                        if (haveMoved == false && isValidMove(i, j) && ((i == 0 && j == 0) || (i == 0 && j == 8) || (i == 8 && j == 0) || (i == 8 && j == 8))) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            //break;
-                        } else if (haveMoved == false && isValidMove(i, j) && (i == 0 || j == 0)) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            //break;
-                        } else if (haveMoved == false && isValidMove(i, j)) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            //break;
-                        }
-                    }
-                }
-            }
-            else {//if the random number is greater than 50, start searching from the bottom of the board
-                for (int i = 8; i >0; i--) {
-                    for (int j = 8; j > 0; j--) {
-                        //corners
-                        if (haveMoved == false && isValidMove(i, j) && ((i == 0 && j == 0) || (i == 0 && j == 8) || (i == 8 && j == 0) || (i == 8 && j == 8))) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            //break;
-                        } else if (haveMoved == false && isValidMove(i, j) && (i == 0 || j == 0)) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            ////break;
-                        } else if (haveMoved == false && isValidMove(i, j)) {
-                            //flip(i, j);
-                            //board[i][j] = 'w';//puts white piece
-                            int[] a = {i, j};
-                            return a;
-                            //haveMoved = true;
-                            //break;
-                        }
-                    }
-                }
-            }
-
-        }
-        else {
-            //if its not the computers turn, don't do anything
-        }
-        return null;
-    }
 
     /*
      * checks weather the game is over or not
