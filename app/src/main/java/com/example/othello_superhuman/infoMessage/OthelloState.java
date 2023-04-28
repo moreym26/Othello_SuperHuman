@@ -430,36 +430,7 @@ public class OthelloState extends GameState implements Serializable{
         return false;
     }
 
-    /*
-     * Dumb AI moves
-     * 100x100
-     * 700x200
-     * 1700x1200
-     */
-    public int[] dumbAIMove() {
-        boolean haveMoved = false;
-        if (!isBlackTurn && isDumb) {//if its the computers turn
-            // Iterate through the board until you find an empty spot that is a valid move,
-            // Then place piece
-            for (int i = 0; i<8; i++) {
-                for (int j = 0; j < 8; j++) {
-                    if (haveMoved == false && isValidMove(i, j)) {
-                        //flip(i, j);
-                        //board[i][j] = 'w';//puts white piece
-                        haveMoved = true;
-                        int[] a = {i, j};
-                        return a;
-                    }
-                }
-            }
 
-        }
-        else {
-            //if its not the computers turn, don't do anything
-        }
-        int[] a = {-1, -1};
-        return a;
-    }
 
     public int[] godAIMove() {
         boolean haveMoved = false;

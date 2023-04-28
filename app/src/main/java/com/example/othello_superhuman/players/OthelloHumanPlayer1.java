@@ -48,10 +48,12 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
         // ignore if not an "up" event
 
         OthelloState gs = ((OthelloState)(game.getGameState()));
+
         int x = (int)event.getX();
         int y = (int)event.getY();
         int row = -1;
         int col = -1;
+
         //if its out of bounds return false
         if (x < 400 || y > 1200 || x < 100 || y > 900) {
             return false;
@@ -97,6 +99,7 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
                 this.game.sendAction(new OthelloMoveAction(this, row, col));
             }
         }
+
         return false;
 
     }
