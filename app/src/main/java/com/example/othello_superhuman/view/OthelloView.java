@@ -47,6 +47,7 @@ public class OthelloView extends SurfaceView {
         this.gameState = state;
     }
 
+
     public OthelloState getGameState(){ return gameState;}
 
     public void onDraw(Canvas c) {
@@ -157,6 +158,7 @@ public class OthelloView extends SurfaceView {
             c.drawText("Restart", 895, 655, black);
         }
     }
+
     protected void sleep(int milliseconds) {
         try {
             Thread.sleep(milliseconds);

@@ -40,7 +40,7 @@ public class MainActivity extends GameMainActivity {
         ArrayList<GamePlayerType> playerTypes = new ArrayList<GamePlayerType>();
 
         // yellow-on-blue GUI
-        playerTypes.add(new GamePlayerType("Local Human Player (blue-yellow)") {
+        playerTypes.add(new GamePlayerType("Local Human Player") {
             public GamePlayer createPlayer(String name) {
                 return new OthelloHumanPlayer1(name, R.layout.activity_main);
             }

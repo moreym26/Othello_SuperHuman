@@ -44,6 +44,13 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
     }
 
     @Override
+    protected void gameIsOver(String msg) {
+        surfaceView.getGameState().gameOver = true;
+        surfaceView.invalidate();
+        //super.gameIsOver(msg);
+    }
+
+    @Override
     public boolean onTouch(View view, MotionEvent event) {
         // ignore if not an "up" event
 

@@ -50,7 +50,8 @@ public class OthelloLocalGame extends LocalGame {
         OthelloState state = (OthelloState) super.state;
         state.endGame();
         if(state.gameOver){
-            return "Game is Over";
+
+            return "Game is Over. ";
         }
         return null;
     }
@@ -81,6 +82,9 @@ public class OthelloLocalGame extends LocalGame {
         else
             return false;
     }
+
+
+
     //tict
     //dont forget start
     //Tag for logging
