@@ -149,13 +149,13 @@ public class OthelloView extends SurfaceView {
             c.drawCircle(975, 425 , 100, white);
             c.drawText(whiteS, 963, 560, black);
 
-            //Buttons
+            /*//Buttons
             c.drawRect(525, 600, 725, 675, brownBox);
             c.drawRect(875, 600, 1075, 675, brownBox);
             black.setTextSize(50);
             c.drawText("Exit", 575, 655, black);
             black.setTextSize(50);
-            c.drawText("Restart", 895, 655, black);
+            c.drawText("Restart", 895, 655, black);*/
         }
     }
 
