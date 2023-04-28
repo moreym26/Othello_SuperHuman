@@ -57,6 +57,9 @@ public class OthelloLocalGame extends LocalGame {
                 return "Black Wins!!\n" + "White pieces: " + state.numWhitePieces + "\n" + "Black pieces: " + state.numBlackPieces + "\n";
 
             }
+            if(state.numBlackPieces == state.numWhitePieces){
+                return "It's a Tie! No one wins!\n" + "White pieces: " + state.numWhitePieces + "\n" + "Black pieces: " + state.numBlackPieces + "\n";
+            }
             //GameOverMessage
 //            c.drawText("Game Over!", 480, 240, black);
 //            black.setTextSize(75);
