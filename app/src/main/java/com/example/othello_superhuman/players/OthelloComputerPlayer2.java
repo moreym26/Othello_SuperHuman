@@ -34,7 +34,7 @@ public class OthelloComputerPlayer2 extends GameComputerPlayer {
 
         OthelloState othelloState = new OthelloState((OthelloState) info);
         if(!(((OthelloState)(game.getGameState())).isBlackTurn)) {
-            sleep(1.5);
+            sleep(1);
             int[] a = this.godAIMove(othelloState);
             if (a[0] != -1 && a[1] != -1 && a != null) {
                 game.sendAction(new OthelloMoveAction(this, a[0], a[1]));

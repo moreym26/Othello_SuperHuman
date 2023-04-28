@@ -38,7 +38,7 @@ public class OthelloView extends SurfaceView {
         othello.setColor(Color.WHITE);
         othello.setStyle(Paint.Style.FILL);
         brownBox.setColor(0xFFceb396);
-        lightGrey.setColor(0x10D3D3D3);
+        lightGrey.setColor(0xFFD3D3D3);
 
         setBackgroundColor(Color.WHITE);
 
@@ -57,7 +57,7 @@ public class OthelloView extends SurfaceView {
         endX = 1200;
         endY = 100;
 
-        if (!gameState.gameOver){
+        if (!gameState.gameOver) {
             c.drawRect(400, 100, 1200, 900, green);
             //vertical lines
             for (int i = 0; i < 9; i++) {
@@ -104,8 +104,8 @@ public class OthelloView extends SurfaceView {
                     }
                     //Put piece counter
                     black.setTextSize(70);
-                    c.drawText("Black Pieces:" + gameState.numBlackPieces , 400, 990, black);
-                    c.drawText("White Pieces:" + gameState.numWhitePieces , 400, 1050, black);
+                    c.drawText("Black Pieces:" + gameState.numBlackPieces, 400, 990, black);
+                    c.drawText("White Pieces:" + gameState.numWhitePieces, 400, 1050, black);
                     //Draw grey circles for possible move
                     for (int l = 0; l < 8; l++) {
                         for (int m = 0; m < 8; m++) {
@@ -115,13 +115,16 @@ public class OthelloView extends SurfaceView {
                         }
                     }
                 }
-            }
-            if(gameState.goAgain) {
+
+
+            if (gameState.goAgain) {
                 black.setTextSize(50);
                 c.drawText("Out of moves! Touch screen again to make White go!", 25, 50, black);
             }
         }
-        else{
+
+//
+        //else{
 
             //Game End Screen
 //            c.drawRect(400, 100, 1200, 900, sage);
