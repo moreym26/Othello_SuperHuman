@@ -122,9 +122,4 @@ public class OthelloComputerPlayer2 extends GameComputerPlayer {
         }
         return null;
     }
-
-
 }
-
-
-

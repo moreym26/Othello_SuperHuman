@@ -37,10 +37,5 @@ public class OthelloMainActivity extends GameMainActivity {
             return new OthelloLocalGame();
         return new OthelloLocalGame((OthelloState) gameState);
     }
-
-
-
-
-
 }
 */

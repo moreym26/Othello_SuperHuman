@@ -12,6 +12,12 @@ import com.example.othello_superhuman.actionMessage.OthelloMoveAction;
 import com.example.othello_superhuman.infoMessage.OthelloState;
 import com.example.othello_superhuman.view.OthelloView;
 
+/**
+ * The onTouch method is called whenever the player touches the surfaceView. It converts
+ * the touch coordinates into row and column values for the game board and checks if the
+ * move is valid. If the move is valid, the method sends an OthelloMoveAction to the game
+ * framework with the player and the chosen row and column.
+ */
 public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouchListener {
     //Tag for logging
     private static final String TAG = "OthelloHumanPlayer1";
@@ -47,7 +53,6 @@ public class OthelloHumanPlayer1 extends GameHumanPlayer implements View.OnTouch
     protected void gameIsOver(String msg) {
         surfaceView.getGameState().gameOver = true;
         surfaceView.invalidate();
-        //super.gameIsOver(msg);
     }
 
     @Override

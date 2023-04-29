@@ -5,28 +5,24 @@ import com.example.GameFramework.infoMessage.GameState;
 import java.util.Random;
 import java.io.Serializable;
 
+
+/**
+ * The class has several methods that allow for the manipulation of
+ * the game state, such as checking whether a move is valid, determining
+ * whether a move is available, and getting the number of pieces of each color.
+ */
 public class OthelloState extends GameState implements Serializable{
     //Tag for logging
     private static final String TAG = "OthelloState";
     private static final long serialVersionUID = 7552321013488624386L;
 
-
-    public boolean homeScreen = true;
     public int numBlackPieces = 2;
     public int numWhitePieces = 2;
 
-    //Finding coordinates of mouse
-    public double touchX;
-    public double touchY;
-    public int blackNumb = 0;
-    public int whiteNumb = 0;
     public boolean isBlackTurn = true;
     public boolean gameOver = false;
     public boolean blackWinner;
     public boolean isTie;
-    public boolean humanGame = false;
-    public boolean AIGame = false;
-    public boolean isDumb = false;
     public boolean goAgain = false; //For AI to take another turn
 
     public char[][] board = new char[8][8];
@@ -447,31 +443,6 @@ public class OthelloState extends GameState implements Serializable{
     }
 
 
-
-
-
-    /*
-     * checks weather the game is over or not
-     */
- /*   private boolean gameOver() {
-        boolean full = false;
-        int countTotal = 0;
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                if (!isBlackTurn || isBlackTurn )
-                {
-                    countTotal++;
-                }
-            }
-        }
-        if (countTotal == 64)
-        {
-            full = true;
-        }
-        return full;
-    }*/
 
     /*
      shows the end game message and says who won with the amount of disks they had.
@@ -980,6 +951,5 @@ public class OthelloState extends GameState implements Serializable{
 
         }
         getNumPieces();
-
     }
 }
